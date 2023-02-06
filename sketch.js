@@ -34,6 +34,7 @@ function setup() {
   rabbit.addImage(snakeImg)
   rabbit.scale = 0.3
   rabbit.debug = true
+  rabbit.setCollider('rectangle', 0, 0 ,350, 350)
   rabbit.velocityX = 0
   rabbit.velocityY = 0
 
@@ -74,12 +75,10 @@ function draw() {
 
   rabbitControls()
 
-  text('Score:' + score, 500, 500)
-
-
+  text('Score:' + score, 500, 500, 100, 100)
 
   if (rabbit.isTouching(food)) {
-    food.position.x = random(10, 900);
+    food.position.x = random(30, 800);
     food.position.y = random(10, 900);
     score = score + 1
     increaseVelocity()
@@ -87,7 +86,7 @@ function draw() {
 
   if (rabbit.isTouching(wall1) || rabbit.isTouching(wall2) || rabbit.isTouching(wall3) || rabbit.isTouching(wall4)) {
     console.log('you are touching the wall')
-    gameOver.visible = true
+    end();
   }
 
 
@@ -127,10 +126,5 @@ function rabbitControls() {
 
 
 function end() {
-  // gameOver.visible = true
-
-}
-
-function play() {
-
+ gameOver.visible = true
 }
