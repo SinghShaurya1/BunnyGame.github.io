@@ -34,7 +34,6 @@ function setup() {
   rabbit.addImage(snakeImg)
   rabbit.scale = 0.3
   rabbit.debug = true
-  rabbit.setCollider('rectangle', 0, 0 ,350, 350)
   rabbit.velocityX = 0
   rabbit.velocityY = 0
 
